@@ -42,7 +42,9 @@ automatiskt via webhooks.
 
 # Work
 
-## Created Servers on Digital Ocean
+## Ansible mot en webbserver
+
+### Created Servers on Digital Ocean
 
 Create 2 server on Digital Ocean as droplets:
 
@@ -51,11 +53,11 @@ Create 2 server on Digital Ocean as droplets:
 
 Both runs Ubuntu 18.04
 
-## Log in on Ansible Server 
+### Log in on Ansible Server 
 
 Logged in as `root` user
 
-### Install Ansible
+#### Install Ansible
 
 ```commandline
 apt update
@@ -65,7 +67,7 @@ apt update
 apt install ansible -y
 ```
 
-### Install Jenkins
+#### Install Jenkins
 
 ```commandline
 # Dependency
@@ -81,7 +83,7 @@ sudo apt install jenkins -y
 
 ![History](img/1.png)
 
-### Create SSH Keys
+#### Create SSH Keys
 
 Change user to jenkins
 
@@ -96,22 +98,109 @@ sshpass -f password.txt ssh-copy-id -o StrictHostKeyChecking=no root@134.209.230
 exit
 ```
 
-### Project folder
+#### Project folder
+
+Create folder structure and content in all files, make `run.sh` executable.
+
+```commandline
+chmod +x run.sh
+git commit -m "message"
+```
 
 ![Project structure](img/2.png)
 
-### Clone Repo
+#### Clone Repo on Ansible Server
 
 ```commandline
 git clone https://github.com/deskavaenkelt/AutomationFrameworkAssignment.git
 cd AutomationFrameworkAssignment/
-chmod +x run.sh
 ./run.sh
 ```
 
-```commandline
+![run image 1](img/3.png)
 
+![run image 2](img/4.png)
+
+![run1 image 3](img/5.png)
+
+![run1 image 4](img/6.png)
+
+## Github, Jenkins mot en webbserver
+
+### Github
+
+Add ssh key to GitHub Account
+
+```commandline
+cat /var/lib/jenkins/.ssh/id_rsa.pub
 ```
+
+### Jenkins
+
+Connect to the [Jenkins Server](http://104.248.46.151:8080/login?from=%2F)
+
+**Password is located here:**
+
+```commandline
+cat /var/lib/jenkins/secrets/initialAdminPassword
+```
+
+![Jenkins login side](img/7.png)
+
+![Select plugins](img/8.png)
+
+Added:
+
+- Git parameters
+- GitHub
+- Locale
+
+Installation
+
+![](img/9.png)
+
+Create First User
+
+![](img/10.png)
+
+Instance configuration
+
+![](img/11.png)
+
+Start site
+
+![](img/12.png)
+
+![](img/13.png)
+
+Add GitHub repos
+
+![](img/14.png)
+
+Add SSH key
+
+```commandline
+cat /var/lib/jenkins/.ssh/id_rsa
+```
+
+![](img/15.png)
+
+Change to main
+
+![](img/16.png)
+
+GitHub Web-Hook
+
+![](img/17.png)
+
+Add build script
+
+![](img/18.png)
+
+
+
+
+
 
 ```commandline
 
