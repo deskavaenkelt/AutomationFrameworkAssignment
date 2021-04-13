@@ -53,7 +53,7 @@ Create 2 server on Digital Ocean as droplets:
 
 Both runs Ubuntu 18.04
 
-### Log in on Ansible Server 
+### Log in on Ansible Server
 
 Logged in as `root` user
 
@@ -196,11 +196,6 @@ GitHub Web-Hook
 Add build script
 
 ![](img/18.png)
-
-
-
-
-
 
 ```commandline
 
