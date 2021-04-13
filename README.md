@@ -29,7 +29,7 @@ webbservern spelar ingen roll.
 Programmet som ska deployas ut på servern är
 Lighthttpd: https://cloudwafer.com/blog/installing-lighttpd-web-server-on-debian-9/
 
-**Dokumentera hur du gjort och hur du tänkt.**
+Dokumentera hur du gjort och hur du tänkt.
 
 ### Github, Jenkins mot en webbserver
 
@@ -42,7 +42,38 @@ automatiskt via webhooks.
 
 # Work
 
-## Ansible mot en webbserver
+## Part 1
+
+## Questions
+
+1. What kind of history can you see in a tool like Jenkins?
+    - You can se the build history and what goes wrong if a build fail
+
+2. What kind of history can you see in a tool like Git?
+    - Since Git is a version control system, you can se changes to your repository
+
+3. What is a Jenkins Pipeline?
+    - Jenkins Pipeline (or simply "Pipeline") is a suite of plugins which supports implementing and integrating continuous delivery pipelines into Jenkins. A continuous delivery pipeline is an automated expression of your process for getting software from version control right through to your users and customers.
+    - Something we will handle in the next course
+
+4. Describe what Jenkins is and alternatives to Jenkins
+    - Jenkins is a free and open source automation server. It helps automate the parts of software development related to building, testing, and deploying, facilitating continuous integration and continuous delivery.
+    - GitLab
+    - Atlassian Bamboo
+    - CircleCI
+    - TeamCity
+    - Travis CI
+
+5. Describe what Ansible is and alternatives to Ansible
+    - Ansible is an open-source software provisioning, configuration management, and application-deployment tool enabling infrastructure as code.
+    - Rudder
+    - SaltStack
+    - Puppet Enterprise
+    - Chef
+
+## Part 2
+
+## Ansible against a web server
 
 ### Created Servers on Digital Ocean
 
@@ -175,7 +206,7 @@ Start site
 
 Add GitHub repos
 
-![](img/14.png)
+![](Git/AutomationFrameworkAssignment/img/19.png)
 
 Add SSH key
 
@@ -197,10 +228,14 @@ Add build script
 
 ![](img/18.png)
 
-```commandline
+A change on GitHub vill trigger a build
 
-```
+![](img/19.png)
 
+Build nr: 4
 
+![](img/20.png)
 
+Result:
 
+![](img/21.png)
