@@ -1,2 +1,117 @@
-# AutomationFrameworkAssignment
-Automation Framework Assignment
+# Automation Framework Assignment
+
+## Introduktion
+
+Den här inlämningsuppgiften består av två delar, en teoretisk och en praktisk. Med den här inlämningsuppgiften skall du
+även skriva en rapport där du dokumenterar hur du tänkt igenom de praktiska momenten. Vill du så kan du svara på
+frågorna i din rapport också, eller om du väljer att lägga dessa i en separat fil.
+
+Jag vill även att du lämnar in ditt ansible-projekt vid inlämning av uppgiften. Det går bra med github länk eller en
+zip.
+
+## Del 1
+
+Frågor
+
+1. Vad för typ av historia kan man se i ett verktyg såsom Jenkins?
+2. Vad för typ av historia kan man se i ett verktyg såsom Git?
+3. Vad är en pipeline i Jenkins?
+4. Beskriv vad Jenkins är samt alternativ till Jenkins
+5. Beskriv vad Ansible är samt alternativ till Ansible
+
+## Del 2 Praktisk tillämpning
+
+### Ansible mot en webbserver
+
+Sätt upp ett Ansible-projekt som du använder för att direkt deploya ut en webbserver. Vad för webbsida du servrar på
+webbservern spelar ingen roll.  
+(Jenkins är inte inblandat här)  
+Programmet som ska deployas ut på servern är
+Lighthttpd: https://cloudwafer.com/blog/installing-lighttpd-web-server-on-debian-9/
+
+**Dokumentera hur du gjort och hur du tänkt.**
+
+### Github, Jenkins mot en webbserver
+
+Här skall du använda ditt tidigare Ansible-projekt, men du skall nu istället installera Jenkins på en server och sedan
+köra ansible på Jenkins servern.  
+https://linuxize.com/post/how-to-install-jenkins-on-debian-10/
+
+När du sedan committar till Github in i master-branchen så skall Jenkins deploya ut din webbsida till webbservern
+automatiskt via webhooks.
+
+# Work
+
+## Created Servers on Digital Ocean
+
+Create 2 server on Digital Ocean as droplets:
+
+- Ansible/Jenkins
+- Web-Server
+
+Both runs Ubuntu 18.04
+
+## Log in on Ansible Server 
+
+Logged in as `root` user
+
+### Install Ansible
+
+```commandline
+apt update
+echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" |tee -a /etc/apt/sources.list
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
+apt update
+apt install ansible -y
+```
+
+### Install Jenkins
+
+```commandline
+# Dependency
+apt install default-jdk
+
+# Jenkins
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+
+sudo apt update
+sudo apt install jenkins -y
+```
+
+![History](img/1.png)
+
+### Create SSH Keys
+
+Change user to jenkins
+
+```commandline
+sudo apt install sshpass
+echo password > password.txt
+
+su jenkins
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+# ssh-copy-id root@134.209.230.48
+sshpass -f password.txt ssh-copy-id -o StrictHostKeyChecking=no root@134.209.230.48
+exit
+```
+
+### Project folder
+
+
+
+```commandline
+
+```
+
+```commandline
+
+```
+
+```commandline
+
+```
+
+
+
+

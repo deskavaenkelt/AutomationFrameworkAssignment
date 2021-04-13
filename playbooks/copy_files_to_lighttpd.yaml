@@ -1,0 +1,6 @@
+- hosts: web
+  tasks:
+    - name: "copy files file to proper destination"
+      copy:
+        src: build/
+        dest: /var/www/{{ domain }} #This gets the * file from build/ directory and copies it to /var/www/html
