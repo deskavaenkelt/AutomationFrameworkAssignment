@@ -98,10 +98,15 @@ exit
 
 ### Project folder
 
+![Project structure](img/2.png)
 
+### Clone Repo
 
 ```commandline
-
+git clone https://github.com/deskavaenkelt/AutomationFrameworkAssignment.git
+cd AutomationFrameworkAssignment/
+chmod +x run.sh
+./run.sh
 ```
 
 ```commandline

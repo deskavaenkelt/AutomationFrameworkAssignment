@@ -1,2 +1,2 @@
-ansible-playbook -i inventory.yml playbooks/install_lighttpd.yaml
-ansible-playbook -i inventory.yml playbooks/copy_files_to_lighttpd.yaml
+ansible-playbook -i inventory.yaml playbooks/install_lighttpd.yaml
+ansible-playbook -i inventory.yaml playbooks/copy_files_to_lighttpd.yaml
